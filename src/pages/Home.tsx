@@ -37,6 +37,11 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      toast.error("Sala já fechou");
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   };
 
